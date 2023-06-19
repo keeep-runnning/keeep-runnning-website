@@ -1,7 +1,10 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 
-const inter = Inter({ subsets: ["latin"] });
+const pretendard = localFont({
+  src: "./PretendardVariable.woff2",
+  display: "swap",
+});
 
 type Props = {
   children: React.ReactNode;
@@ -10,7 +13,7 @@ type Props = {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="ko">
-      <body className={inter.className}>{children}</body>
+      <body className={pretendard.className}>{children}</body>
     </html>
   );
 }
