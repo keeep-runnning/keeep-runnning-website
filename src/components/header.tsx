@@ -1,8 +1,9 @@
 import Link from "next/link";
+import ThemeToggleButton from "./theme-toggle-button";
 
 export default function Header() {
   return (
-    <header>
+    <header className="flex items-center justify-between">
       <nav>
         <ul className="flex gap-x-4 py-4 font-bold">
           <li>
@@ -16,6 +17,7 @@ export default function Header() {
           </li>
         </ul>
       </nav>
+      <ThemeToggleButton />
     </header>
   );
 }

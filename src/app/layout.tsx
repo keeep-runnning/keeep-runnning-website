@@ -2,6 +2,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import Providers from "./providers";
 
 const pretendard = localFont({
   src: "./PretendardVariable.woff2",
@@ -14,13 +15,17 @@ type Props = {
 
 export default function RootLayout({ children }: Props) {
   return (
-    <html lang="ko">
-      <body className={pretendard.className}>
-        <div className="px-5 py-4 max-w-screen-lg mx-auto flex flex-col gap-y-4">
-          <Header />
-          {children}
-          <Footer />
-        </div>
+    <html lang="ko" suppressHydrationWarning>
+      <body
+        className={`${pretendard.className} bg-stone-100 text-stone-950 dark:bg-stone-900 dark:text-stone-50`}
+      >
+        <Providers>
+          <div className="mx-auto flex max-w-screen-lg flex-col gap-y-4 px-5 py-4">
+            <Header />
+            {children}
+            <Footer />
+          </div>
+        </Providers>
       </body>
     </html>
   );
