@@ -1,22 +1,10 @@
-import Link from "next/link";
+import NavLinks from "./nav-links";
 import ThemeToggleButton from "./theme-toggle-button";
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-between">
-      <nav>
-        <ul className="flex gap-x-4 py-4 font-bold">
-          <li>
-            <Link href="/posts">Posts</Link>
-          </li>
-          <li>
-            <Link href="/projects">Projects</Link>
-          </li>
-          <li>
-            <Link href="/tags">Tags</Link>
-          </li>
-        </ul>
-      </nav>
+    <header className="sticky top-0 flex h-20 items-center justify-between bg-stone-100 dark:bg-stone-900">
+      <NavLinks />
       <ThemeToggleButton />
     </header>
   );
