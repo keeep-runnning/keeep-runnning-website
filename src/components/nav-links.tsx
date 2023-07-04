@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect } from "react";
 import { useMediaQuery, useToggle } from "usehooks-ts";
+import NavLink from "./nav-link";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -48,9 +48,7 @@ export default function NavLinks() {
             >
               {navLinks.map(({ name, path }) => (
                 <li key={name}>
-                  <Link href={path} className="block p-2">
-                    {name}
-                  </Link>
+                  <NavLink href={path}>{name}</NavLink>
                 </li>
               ))}
             </ul>
@@ -62,9 +60,7 @@ export default function NavLinks() {
       <ul className="hidden md:flex md:gap-x-2 md:font-bold">
         {navLinks.map(({ name, path }) => (
           <li key={name}>
-            <Link href={path} className="block p-2">
-              {name}
-            </Link>
+            <NavLink href={path}>{name}</NavLink>
           </li>
         ))}
       </ul>

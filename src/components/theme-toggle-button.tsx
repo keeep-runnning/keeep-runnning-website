@@ -28,7 +28,7 @@ export default function ThemeToggleButton() {
     <button
       type="button"
       onClick={handleClickButton}
-      className="rounded p-2 text-yellow-500 hover:bg-stone-200 dark:hover:bg-stone-800"
+      className="rounded p-3 text-indigo-500 hover:bg-stone-200 dark:hover:bg-stone-800"
     >
       {isDarkMode ? (
         <MoonIcon className="h-5 w-5" />
